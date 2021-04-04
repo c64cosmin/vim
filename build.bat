@@ -21,6 +21,14 @@ nmake -f Make_mvc.mak
 cd ..
 
 if not exist "..\..\vimc64" mkdir ..\..\vimc64
-copy src\*.exe ..\..\vimc64 /y
-copy src\xxd\xxd.exe ..\..\vimc64 /y
-xcopy runtime ..\..\vimc64 /y /E
+copy src\*.exe                    ..\..\vimc64 /y
+copy src\xxd\xxd.exe              ..\..\vimc64 /y
+copy src\GvimExt\gvimext.dll      ..\..\vimc64 /y
+xcopy runtime                     ..\..\vimc64 /y /E
+
+cd ..
+if not exist "gvimfullscreen_win32" git clone git@github.com:c64cosmin/gvimfullscreen_win32.git
+cd gvimfullscreen_win32
+nmake
+copy gvimfullscreen_64.dll ..\..\vimc64\gvimfullscreen.dll
+cd vim
