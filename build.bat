@@ -7,11 +7,11 @@ set NETBEANS=no
 set OLE=yes
 
 set DYNAMIC_PYTHON=yes
-set PYTHON=C:\dev\python27
+set PYTHON=E:\dev\python27
 set PYTHON_VER=27
 
 set DYNAMIC_PYTHON3=yes
-set PYTHON3=C:\dev\python3
+set PYTHON3=E:\dev\python3
 set PYTHON3_VER=39
 
 cd src
