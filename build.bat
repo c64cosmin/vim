@@ -2,6 +2,7 @@ set CPU=AMD64
 set TOOLCHAIN=amd64
 set FEATURES=HUGE
 set GUI=yes
+set VIMDLL=yes
 set MBYTE=yes
 set NETBEANS=no
 set OLE=yes
@@ -22,6 +23,7 @@ cd ..
 
 if not exist "..\..\vimc64" mkdir ..\..\vimc64
 copy src\*.exe                    ..\..\vimc64 /y
+copy src\vim64.dll                ..\..\vimc64 /y
 copy src\xxd\xxd.exe              ..\..\vimc64 /y
 copy src\GvimExt\gvimext.dll      ..\..\vimc64 /y
 xcopy runtime                     ..\..\vimc64 /y /E
@@ -31,4 +33,5 @@ if not exist "gvimfullscreen_win32" git clone git@github.com:c64cosmin/gvimfulls
 cd gvimfullscreen_win32
 nmake
 copy gvimfullscreen_64.dll ..\..\vimc64\gvimfullscreen.dll
+cd ..
 cd vim
